@@ -40,7 +40,7 @@ def load_all_configs(config_path: Path) -> Dict[str, Any]:
     configs: Dict[str, Any] = {}
 
     try:
-        # Verifica se o diretório de configuração existe.       
+        # Verifica se o diretório de configuração existe.
         if not config_path.exists():
             raise FileNotFoundError(
                 f"Diretório de configuração não encontrado: {config_path}"
@@ -54,11 +54,9 @@ def load_all_configs(config_path: Path) -> Dict[str, Any]:
 
         # Percorre todos os arquivos com extensão .yaml
         for file in config_path.glob("*.yaml"):
-
             # Abre o arquivo YAML em modo leitura utilizando
             # codificação UTF-8 para garantir compatibilidade.
             with open(file, "r", encoding="utf-8") as f:
-
                 # Carrega o conteúdo YAML de forma segura utilizando
                 # yaml.safe_load, que evita execução de código arbitrário.
                 configs[file.stem] = yaml.safe_load(f)
