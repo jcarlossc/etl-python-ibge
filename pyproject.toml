@@ -18,6 +18,9 @@ packages = [{include = "etl_python_ibge", from = "src"}]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.poetry.scripts]
+etl = "etl_python_ibge.main:main"
+
 [dependency-groups]
 dev = [
     "mypy (>=2.3.0,<3.0.0)",
@@ -28,3 +31,15 @@ dev = [
     "types-pyyaml (>=6.0.12.20260724,<7.0.0.0)",
     "pre-commit (>=4.6.1,<5.0.0)"
 ]
+
+[tool.taskipy.tasks]
+app = "etl"
+pytest = "poetry run pytest ."
+covhtml = "poetry run pytest --cov=etl_python_ibge --cov-report=html"
+covcmd = "poetry run pytest --cov=etl_python_ibge --cov-report=term-missing"
+format = "poetry run ruff format ."
+lint = "ruff check ."
+mypy = "poetry run mypy ."
+check = "poetry run ruff format --check ."
+precommit = "poetry run pre-commit run --all-files"
+fix = "poetry run ruff check . --fix"
