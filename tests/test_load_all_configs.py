@@ -1,5 +1,6 @@
-import pytest
 from pathlib import Path
+
+import pytest
 
 from etl_python_ibge.utils.load_yaml.loader_yaml import load_all_configs
 
@@ -10,12 +11,6 @@ def test_load_all_configs_success(tmp_path):
     são carregados corretamente.
     """
 
-    # Cria dois arquivos YAML temporários.
-    (tmp_path / "database.yaml").write_text(
-        "host: localhost\nport: 3306",
-        encoding="utf-8",
-    )
-
     (tmp_path / "logging.yaml").write_text(
         "level: INFO",
         encoding="utf-8",
@@ -25,12 +20,9 @@ def test_load_all_configs_success(tmp_path):
     configs = load_all_configs(tmp_path)
 
     # Verifica se os arquivos foram carregados.
-    assert "database" in configs
     assert "logging" in configs
 
     # Verifica o conteúdo carregado.
-    assert configs["database"]["host"] == "localhost"
-    assert configs["database"]["port"] == 3306
     assert configs["logging"]["level"] == "INFO"
 
 

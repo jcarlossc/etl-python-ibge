@@ -1,9 +1,10 @@
-import yaml
 from pathlib import Path
-from typing import Dict, Any
+from typing import Any
+
+import yaml
 
 
-def load_all_configs(config_path: Path) -> Dict[str, Any]:
+def load_all_configs(config_path: Path) -> dict[str, Any]:
     """
     Carrega todos os arquivos de configuração YAML presentes
     em um diretório específico.
@@ -37,7 +38,7 @@ def load_all_configs(config_path: Path) -> Dict[str, Any]:
 
     # Inicializa o dicionário que armazenará todas as configurações
     # carregadas a partir dos arquivos YAML.
-    configs: Dict[str, Any] = {}
+    configs: dict[str, Any] = {}
 
     try:
         # Verifica se o diretório de configuração existe.
