@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.3.1...v0.4.0) (2026-07-31)
+
+
+### Features
+
+* Arquivo retry adicionado ([44a254c](https://github.com/jcarlossc/etl-python-ibge/commit/44a254c3052ea480d8a14d497c1f3a3954fbee68))
+* Arquivo retry adicionado ([649e195](https://github.com/jcarlossc/etl-python-ibge/commit/649e19507a846a2b9f7793a6d9997fd15e3dc6a7))
+
+
+### Bug Fixes
+
+* Arquivo retry modificado ([272596b](https://github.com/jcarlossc/etl-python-ibge/commit/272596bd136bbcd13188ba099faaaf9e61bcfbac))
+
 ## [0.3.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.3.0...v0.3.1) (2026-07-31)
 
 
