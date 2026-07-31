@@ -1,4 +1,5 @@
 import logging
+
 import pytest
 
 from etl_python_ibge.utils.loggers.logger import setup_logger
