@@ -1,10 +1,11 @@
 import logging
 import time
+from typing import Any
 
 import requests
 
 
-def retry(connect, max_attempts=3, delay=2):
+def retry(connect, max_attempts=3, delay=2) -> Any:
     logger = logging.getLogger(__name__)
 
     for attempt in range(max_attempts):
