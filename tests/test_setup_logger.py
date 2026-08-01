@@ -42,13 +42,11 @@ def test_setup_logger_success(monkeypatch, tmp_path):
     assert called["format"] == "%(levelname)s - %(message)s"
 
     # Verifica se foi configurado apenas o FileHandler.
-    assert len(called["handlers"]) == 1
+    assert len(called["handlers"]) == 2
 
     # Verifica se o handler é um FileHandler.
-    assert isinstance(
-        called["handlers"][0],
-        logging.FileHandler,
-    )
+    assert isinstance(called["handlers"][0], logging.FileHandler)
+    assert isinstance(called["handlers"][1], logging.StreamHandler)
 
 
 def test_setup_logger_invalid_config(tmp_path):

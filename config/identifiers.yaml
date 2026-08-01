@@ -33,3 +33,5 @@ identifiers:
   "internet": 77857
   "consumo_calorico": 77829
   "subnutricao": 77834
+
+url: "https://servicodados.ibge.gov.br/api/v1/paises/BR/indicadores/"
