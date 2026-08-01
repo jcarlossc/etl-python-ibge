@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.4.2...v0.5.0) (2026-08-01)
+
+
+### Features
+
+* Arquivo api_ibge adicionado ([a97d79e](https://github.com/jcarlossc/etl-python-ibge/commit/a97d79ec35b6f62b51aef9da3cadb498a8f5a008))
+* Arquivo api_ibge adicionado ([cb91dfc](https://github.com/jcarlossc/etl-python-ibge/commit/cb91dfc5cdc26633a211f37733474125107ddc42))
+
 ## [0.4.2](https://github.com/jcarlossc/etl-python-ibge/compare/v0.4.1...v0.4.2) (2026-08-01)
 
 
