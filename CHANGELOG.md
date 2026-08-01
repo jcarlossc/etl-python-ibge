@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.2](https://github.com/jcarlossc/etl-python-ibge/compare/v0.4.1...v0.4.2) (2026-08-01)
+
+
+### Bug Fixes
+
+* Arquivo identifiers, logger e teste logger modificados ([d738d91](https://github.com/jcarlossc/etl-python-ibge/commit/d738d91957e6d2e88ecbfa234bfd988e65863baf))
+* Arquivo identifiers, logger e teste logger modificados ([2c248f9](https://github.com/jcarlossc/etl-python-ibge/commit/2c248f9917db11bdfc5663fa2d9084e5877c3de1))
+
 ## [0.4.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.4.0...v0.4.1) (2026-07-31)
 
 
