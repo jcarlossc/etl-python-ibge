@@ -802,6 +802,21 @@ timezone = ["pytz (>=2020.1)"]
 xml = ["lxml (>=5.3.0)"]
 
 [[package]]
+name = "pandas-stubs"
+version = "3.0.5.260730"
+description = "Type annotations for pandas"
+optional = false
+python-versions = ">=3.11"
+groups = ["main"]
+files = [
+    {file = "pandas_stubs-3.0.5.260730-py3-none-any.whl", hash = "sha256:60e90e3e1eda6937e337e243cbe6217e151c11137cd7eddf832af537c7310bfd"},
+    {file = "pandas_stubs-3.0.5.260730.tar.gz", hash = "sha256:f70a232c57d93a5a2c81f8a53953e10891a5374bc92652277deb325e2e4d0ff3"},
+]
+
+[package.dependencies]
+numpy = ">=1.23.5"
+
+[[package]]
 name = "pathspec"
 version = "1.1.1"
 description = "Utility library for gitignore style pattern matching of file paths."
@@ -1295,4 +1310,4 @@ python-discovery = ">=1.4.2"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "58767cbab4f117bfd6db1c0bb6ffc5cf5022a38eb266f95306341034bdbd1b46"
+content-hash = "8cbee96f8389712e563e689016b3b8d3a8e0875162bb9f7189d117fa05e0f71e"
