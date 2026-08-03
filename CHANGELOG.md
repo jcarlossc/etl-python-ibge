@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.5.0...v0.6.0) (2026-08-03)
+
+
+### Features
+
+* Arquivo convert_to_df e pandas adicionados ([abb4498](https://github.com/jcarlossc/etl-python-ibge/commit/abb44986395cb3478d8c57a5b00b1f20117f6789))
+* Arquivo convert_to_df e pandas adicionados ([feb3c98](https://github.com/jcarlossc/etl-python-ibge/commit/feb3c9830591184baefbdfb6d64d60ca4571cc4b))
+
 ## [0.5.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.4.2...v0.5.0) (2026-08-01)
 
 
