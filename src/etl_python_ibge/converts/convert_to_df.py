@@ -13,38 +13,44 @@ def get_convert(
 
     result = []
 
-    for response in data:
-        for indicator in response:
-            unit = indicator.get("unidade", {})
+    try:
+        for response in data:
+            for indicator in response:
+                unit = indicator.get("unidade", {})
 
-            for serie in indicator.get("series", []):
-                country = serie.get("pais", {})
+                for serie in indicator.get("series", []):
+                    country = serie.get("pais", {})
 
-                for records in serie.get("serie", []):
-                    for ano, valor in records.items():
-                        if not ano.isdigit():
-                            continue
+                    for records in serie.get("serie", []):
+                        for ano, valor in records.items():
+                            if not ano.isdigit():
+                                continue
 
-                        valor = pd.to_numeric(
-                            valor,
-                            errors="coerce",
-                        )
-
-                        if pd.notna(valor):
-                            result.append(
-                                {
-                                    "id_indicador": indicator.get("id"),
-                                    "indicador": indicator.get("indicador"),
-                                    "id_unidade": unit.get("id"),
-                                    "classe": unit.get("classe"),
-                                    "multiplicador": unit.get("multiplicador"),
-                                    "sigla_pais": country.get("id"),
-                                    "pais": country.get("nome"),
-                                    "ano": int(ano),
-                                    "valor": valor,
-                                }
+                            valor = pd.to_numeric(
+                                valor,
+                                errors="coerce",
                             )
 
-    logger.info("Finalizando a convrsão e limpeza dos dados.")
+                            if pd.notna(valor):
+                                result.append(
+                                    {
+                                        "id_indicador": indicator.get("id"),
+                                        "indicador": indicator.get("indicador"),
+                                        "id_unidade": unit.get("id"),
+                                        "classe": unit.get("classe"),
+                                        "multiplicador": unit.get("multiplicador"),
+                                        "sigla_pais": country.get("id"),
+                                        "pais": country.get("nome"),
+                                        "ano": int(ano),
+                                        "valor": valor,
+                                    }
+                                )
 
-    return pd.DataFrame(result)
+        logger.info("Finalizando a convrsão e limpeza dos dados.")
+
+        return pd.DataFrame(result)
+
+    except Exception as exc:
+        logger.exception("Erro ao converter resposta da API do IBGE.")
+
+        raise ValueError("Falha na conversão dos dados da API.") from exc
