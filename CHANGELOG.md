@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.6.0...v0.7.0) (2026-08-04)
+
+
+### Features
+
+* Arquivo get_star_schema adicionado ([95a16f6](https://github.com/jcarlossc/etl-python-ibge/commit/95a16f66c45b5e6c0ea5c5e3e3b58d788cf44820))
+* Arquivo get_star_schema adicionado ([89a19d5](https://github.com/jcarlossc/etl-python-ibge/commit/89a19d52deed9a0c1deeede46a9de608fa285bda))
+
 ## [0.6.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.5.0...v0.6.0) (2026-08-03)
 
 
