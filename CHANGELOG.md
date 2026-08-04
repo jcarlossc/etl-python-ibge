@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.7.0...v0.7.1) (2026-08-04)
+
+
+### Documentation
+
+* Docstring adicionado ([12117ae](https://github.com/jcarlossc/etl-python-ibge/commit/12117ae81fd9d32b32accc413f3fe03415b0507c))
+
 ## [0.7.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.6.0...v0.7.0) (2026-08-04)
 
 
