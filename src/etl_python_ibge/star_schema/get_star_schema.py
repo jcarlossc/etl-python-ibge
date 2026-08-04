@@ -2,6 +2,43 @@ import pandas as pd
 
 
 def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    """
+    Cria um modelo estrela (Star Schema) a partir de um DataFrame.
+
+    O modelo estrela é composto por quatro tabelas dimensão
+    (indicador, unidade, país e tempo) e uma tabela fato contendo
+    as medidas e as chaves estrangeiras das dimensões.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame contendo os dados padronizados da API do IBGE.
+
+    Returns
+    -------
+    dict[str, pd.DataFrame]
+        Dicionário contendo as tabelas do modelo estrela.
+
+        Chaves retornadas:
+
+        - dim_indicador
+        - dim_unidade
+        - dim_pais
+        - dim_tempo
+        - fato_indicador
+
+    Raises
+    ------
+    KeyError
+        Caso alguma coluna obrigatória não exista.
+
+    TypeError
+        Caso o argumento informado não seja um DataFrame.
+
+    ValueError
+        Caso o DataFrame esteja vazio.
+    """
+
     if not isinstance(df, pd.DataFrame):
         raise TypeError("O parâmetro 'df' deve ser um pandas DataFrame.")
 
