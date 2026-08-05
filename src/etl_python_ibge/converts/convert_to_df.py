@@ -79,7 +79,7 @@ def get_convert(
                                     }
                                 )
 
-        logger.info("Finalizando a convrsão e limpeza dos dados.")
+        logger.info("Finalizando a conversão e limpeza dos dados.")
 
         return pd.DataFrame(result)
 
