@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.2](https://github.com/jcarlossc/etl-python-ibge/compare/v0.7.1...v0.7.2) (2026-08-05)
+
+
+### Bug Fixes
+
+* Arquivos convert_to_df.py e get_star_schema.py modificados ([73512a3](https://github.com/jcarlossc/etl-python-ibge/commit/73512a318cda5a9355efbffef393d6d8427b023b))
+* Arquivos convert_to_df.py e get_star_schema.py modificados ([8d96b61](https://github.com/jcarlossc/etl-python-ibge/commit/8d96b61380df82841f2797cb6f39d0c22e41a2fa))
+
 ## [0.7.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.7.0...v0.7.1) (2026-08-04)
 
 
