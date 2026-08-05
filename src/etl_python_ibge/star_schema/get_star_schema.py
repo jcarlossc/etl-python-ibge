@@ -1,3 +1,5 @@
+import logging
+
 import pandas as pd
 
 
@@ -39,6 +41,10 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
         Caso o DataFrame esteja vazio.
     """
 
+    logger = logging.getLogger(__name__)
+
+    logger.info("Iniciando modelagem dos dados.")
+
     if not isinstance(df, pd.DataFrame):
         raise TypeError("O parâmetro 'df' deve ser um pandas DataFrame.")
 
@@ -46,6 +52,8 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
         raise ValueError("O DataFrame está vazio.")
 
     try:
+        logger.info("Iniciando modelagem da dimensão indicador.")
+
         # Dimensão Indicador
         dim_indicador = (
             df[
@@ -63,6 +71,8 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             "id_indicador_sk",
             range(1, len(dim_indicador) + 1),
         )
+
+        logger.info("Iniciando modelagem da dimensão unidade.")
 
         # Dimensão Unidade
         dim_unidade = (
@@ -94,6 +104,8 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             inplace=True,
         )
 
+        logger.info("Iniciando modelagem da dimensão país.")
+
         # Dimensão País
         dim_pais = (
             df[
@@ -112,6 +124,8 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             range(1, len(dim_pais) + 1),
         )
 
+        logger.info("Iniciando modelagem da dimensão tempo.")
+
         # Dimensão Tempo
         dim_tempo = pd.DataFrame(
             {
@@ -124,6 +138,8 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             "id_tempo",
             range(1, len(dim_tempo) + 1),
         )
+
+        logger.info("Iniciando relacionamentos.")
 
         # Relacionamentos
         fato = df.copy()
@@ -172,6 +188,8 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             on="ano",
         )
 
+        logger.info("Iniciando modelagem da tabela fato.")
+
         # Tabela fato
         fato = fato[
             [
@@ -188,6 +206,8 @@ def create_star_schema(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             "id_fato",
             range(1, len(fato) + 1),
         )
+
+        logger.info("Dados modelados com sucesso.")
 
         return {
             "dim_indicador": dim_indicador,
