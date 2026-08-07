@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.9.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.8.1...v0.9.0) (2026-08-07)
+
+
+### Features
+
+* Arquivo execute_sql adicionado ([66ae770](https://github.com/jcarlossc/etl-python-ibge/commit/66ae77013f2697a64b0cec5c248aae155d82589d))
+* Arquivo execute_sql adicionado ([7371712](https://github.com/jcarlossc/etl-python-ibge/commit/7371712baa10cc9e7870f3abd53cb8720a4ceae4))
+
 ## [0.8.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.8.0...v0.8.1) (2026-08-07)
 
 
