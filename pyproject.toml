@@ -1,6 +1,6 @@
 [project]
 name = "etl-python-ibge"
-version = "0.9.0"
+version = "0.9.1"
 description = "ETL da API do IBGE"
 authors = [
     {name = "jcarlossc",email = "jcarlossc1977@gmail.com"}
