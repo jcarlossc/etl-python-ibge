@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.8.0...v0.8.1) (2026-08-07)
+
+
+### Bug Fixes
+
+* Script movido ([5938533](https://github.com/jcarlossc/etl-python-ibge/commit/5938533ddfbac9ee386f1c63a32a40429decfb78))
+* Script movido ([8a0e3ea](https://github.com/jcarlossc/etl-python-ibge/commit/8a0e3eaee774e8d5a6861b06b6c37e8c70c62420))
+
 ## [0.8.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.7.2...v0.8.0) (2026-08-07)
 
 
