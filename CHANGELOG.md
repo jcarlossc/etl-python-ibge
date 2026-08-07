@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.8.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.7.2...v0.8.0) (2026-08-07)
+
+
+### Features
+
+* Arquivo get_connection adicionado ([642199b](https://github.com/jcarlossc/etl-python-ibge/commit/642199b378bedb1ade9342cd21943efbb112e3a5))
+* Arquivo get_connection adicionado ([495d8fe](https://github.com/jcarlossc/etl-python-ibge/commit/495d8fe8a2e649f31c347f9f407c8f5e3f0c1dff))
+* implementa conexão MySQL com SQLAlchemy ([0c10860](https://github.com/jcarlossc/etl-python-ibge/commit/0c108605abe3461df35fa6b843ae0ebd79633e5f))
+
 ## [0.7.2](https://github.com/jcarlossc/etl-python-ibge/compare/v0.7.1...v0.7.2) (2026-08-05)
 
 
