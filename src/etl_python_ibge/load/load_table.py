@@ -10,6 +10,26 @@ def load_table(
     table_name: str,
     engine: Engine,
 ) -> None:
+    """
+    Carrega os dados de um DataFrame em uma tabela MySQL.
+
+    Parameters
+    ----------
+    dataframe : pd.DataFrame
+        Dados que serão carregados.
+
+    table_name : str
+        Nome da tabela de destino.
+
+    engine : Engine
+        Engine SQLAlchemy utilizada para conexão com o banco.
+
+    Raises
+    ------
+    RuntimeError
+        Caso ocorra erro durante a carga dos dados.
+    """
+
     logger = logging.getLogger(__name__)
 
     logger.info(
