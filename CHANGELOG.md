@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.9.1...v0.10.0) (2026-08-08)
+
+
+### Features
+
+* arquivo load_table adicionado ([0fadc41](https://github.com/jcarlossc/etl-python-ibge/commit/0fadc41b473184c02556b0e07711456074ca6cd4))
+* arquivo load_table adicionado ([ba722d5](https://github.com/jcarlossc/etl-python-ibge/commit/ba722d5bf4ca6e6bb853e595528e0354c89a8bda))
+
 ## [0.9.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.9.0...v0.9.1) (2026-08-07)
 
 
