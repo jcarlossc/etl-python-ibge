@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.10.0...v0.10.1) (2026-08-08)
+
+
+### Documentation
+
+* Comentários e docstring adicionados ([df6fb25](https://github.com/jcarlossc/etl-python-ibge/commit/df6fb254472b3c1328af10a397c49f0c814e3541))
+
 ## [0.10.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.9.1...v0.10.0) (2026-08-08)
 
 
