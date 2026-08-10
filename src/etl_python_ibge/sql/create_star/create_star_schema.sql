@@ -1,20 +1,34 @@
-CREATE DATABASE IF NOT EXISTS ibge_database
+DROP DATABASE IF EXISTS ibge_database;
+
+CREATE DATABASE ibge_database
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
 USE ibge_database;
 
-CREATE TABLE IF NOT EXISTS dim_indicador (
+-- ==========================
+-- DIM_INDICADOR
+-- ==========================
+CREATE TABLE dim_indicador (
 
-    id_indicador INT PRIMARY KEY,
+    id_indicador_sk INT PRIMARY KEY,
 
-    indicador VARCHAR(255) NOT NULL
+    id_indicador INT NOT NULL,
+
+    indicador VARCHAR(255) NOT NULL,
+
+    UNIQUE(id_indicador)
 
 );
 
-CREATE TABLE IF NOT EXISTS dim_unidade (
+-- ==========================
+-- DIM_UNIDADE
+-- ==========================
+CREATE TABLE dim_unidade (
 
-    id_unidade VARCHAR(30) PRIMARY KEY,
+    id_unidade_sk INT PRIMARY KEY,
+
+    unidade VARCHAR(50) NOT NULL,
 
     classe CHAR(1),
 
@@ -22,9 +36,12 @@ CREATE TABLE IF NOT EXISTS dim_unidade (
 
 );
 
-CREATE TABLE IF NOT EXISTS dim_pais (
+-- ==========================
+-- DIM_PAIS
+-- ==========================
+CREATE TABLE dim_pais (
 
-    id_pais INT AUTO_INCREMENT PRIMARY KEY,
+    id_pais_sk INT PRIMARY KEY,
 
     sigla_pais CHAR(2) NOT NULL,
 
@@ -34,7 +51,10 @@ CREATE TABLE IF NOT EXISTS dim_pais (
 
 );
 
-CREATE TABLE IF NOT EXISTS dim_tempo (
+-- ==========================
+-- DIM_TEMPO
+-- ==========================
+CREATE TABLE dim_tempo (
 
     id_tempo INT PRIMARY KEY,
 
@@ -44,31 +64,34 @@ CREATE TABLE IF NOT EXISTS dim_tempo (
 
 );
 
-CREATE TABLE IF NOT EXISTS fato_indicador (
+-- ==========================
+-- FATO_INDICADOR
+-- ==========================
+CREATE TABLE fato_indicador (
 
-    id_fato BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_fato BIGINT PRIMARY KEY,
 
-    id_indicador INT NOT NULL,
+    id_indicador_sk INT NOT NULL,
 
-    id_unidade VARCHAR(30) NOT NULL,
+    id_unidade_sk INT NOT NULL,
 
-    id_pais INT NOT NULL,
+    id_pais_sk INT NOT NULL,
 
     id_tempo INT NOT NULL,
 
     valor DECIMAL(18,4),
 
     CONSTRAINT fk_indicador
-        FOREIGN KEY (id_indicador)
-        REFERENCES dim_indicador(id_indicador),
+        FOREIGN KEY (id_indicador_sk)
+        REFERENCES dim_indicador(id_indicador_sk),
 
     CONSTRAINT fk_unidade
-        FOREIGN KEY (id_unidade)
-        REFERENCES dim_unidade(id_unidade),
+        FOREIGN KEY (id_unidade_sk)
+        REFERENCES dim_unidade(id_unidade_sk),
 
     CONSTRAINT fk_pais
-        FOREIGN KEY (id_pais)
-        REFERENCES dim_pais(id_pais),
+        FOREIGN KEY (id_pais_sk)
+        REFERENCES dim_pais(id_pais_sk),
 
     CONSTRAINT fk_tempo
         FOREIGN KEY (id_tempo)
@@ -76,14 +99,17 @@ CREATE TABLE IF NOT EXISTS fato_indicador (
 
 );
 
+-- ==========================
+-- ÍNDICES
+-- ==========================
 CREATE INDEX idx_fato_indicador
-ON fato_indicador(id_indicador);
+ON fato_indicador(id_indicador_sk);
+
+CREATE INDEX idx_fato_unidade
+ON fato_indicador(id_unidade_sk);
 
 CREATE INDEX idx_fato_pais
-ON fato_indicador(id_pais);
+ON fato_indicador(id_pais_sk);
 
 CREATE INDEX idx_fato_tempo
 ON fato_indicador(id_tempo);
-
-CREATE INDEX idx_fato_unidade
-ON fato_indicador(id_unidade);

@@ -5,7 +5,7 @@ import pytest
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import SQLAlchemyError
 
-from etl_python_ibge.load.load_table import load_table
+from etl_python_ibge.load.tabble_load.load_table import load_table
 
 
 def test_load_table_success(monkeypatch):

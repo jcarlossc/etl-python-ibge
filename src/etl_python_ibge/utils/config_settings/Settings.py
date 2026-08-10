@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     # Senha do banco.
     mysql_password: str
 
+    # Nome do banco de dados
+    mysql_database: str
+
     # Configuração do Pydantic.
     model_config = SettingsConfigDict(
         env_file=".env",
