@@ -2,10 +2,9 @@ from unittest.mock import Mock
 
 import pandas as pd
 import pytest
+from etl_python_ibge.load.tabble_load.load_table import load_table
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import SQLAlchemyError
-
-from etl_python_ibge.load.load_table import load_table
 
 
 def test_load_table_success(monkeypatch):

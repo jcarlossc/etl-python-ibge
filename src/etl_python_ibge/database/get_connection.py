@@ -40,6 +40,7 @@ def get_engine(settings: Settings) -> Engine:
             f"{settings.mysql_password}@"
             f"{settings.mysql_host}:"
             f"{settings.mysql_port}/"
+            f"{settings.mysql_database}"
         )
 
         # Cria instância Engine
