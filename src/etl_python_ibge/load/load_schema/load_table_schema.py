@@ -14,34 +14,40 @@ def load_star_schema(
 
     logger.info("Iniciando carga do modelo estrela.")
 
-    load_table(
-        dataframe=star_schema["dim_indicador"],
-        table_name="dim_indicador",
-        engine=engine,
-    )
+    try:
+        load_table(
+            dataframe=star_schema["dim_indicador"],
+            table_name="dim_indicador",
+            engine=engine,
+        )
 
-    load_table(
-        dataframe=star_schema["dim_unidade"],
-        table_name="dim_unidade",
-        engine=engine,
-    )
+        load_table(
+            dataframe=star_schema["dim_unidade"],
+            table_name="dim_unidade",
+            engine=engine,
+        )
 
-    load_table(
-        dataframe=star_schema["dim_pais"],
-        table_name="dim_pais",
-        engine=engine,
-    )
+        load_table(
+            dataframe=star_schema["dim_pais"],
+            table_name="dim_pais",
+            engine=engine,
+        )
 
-    load_table(
-        dataframe=star_schema["dim_tempo"],
-        table_name="dim_tempo",
-        engine=engine,
-    )
+        load_table(
+            dataframe=star_schema["dim_tempo"],
+            table_name="dim_tempo",
+            engine=engine,
+        )
 
-    load_table(
-        dataframe=star_schema["fato_indicador"],
-        table_name="fato_indicador",
-        engine=engine,
-    )
+        load_table(
+            dataframe=star_schema["fato_indicador"],
+            table_name="fato_indicador",
+            engine=engine,
+        )
 
-    logger.info("Modelo estrela carregado com sucesso.")
+        logger.info("Modelo estrela carregado com sucesso.")
+
+    except RuntimeError:
+        logger.exception("Erro durante a carga do modelo estrela.")
+
+        raise
