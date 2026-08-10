@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.10.3...v0.11.0) (2026-08-10)
+
+
+### Features
+
+* Teste unitário adicionado ([d498d08](https://github.com/jcarlossc/etl-python-ibge/commit/d498d08c99cc530c9e68b4c2c4ee1ac837e74c15))
+
 ## [0.10.3](https://github.com/jcarlossc/etl-python-ibge/compare/v0.10.2...v0.10.3) (2026-08-10)
 
 
