@@ -11,6 +11,7 @@ def test_get_engine_success(monkeypatch):
         mysql_password="1234",
         mysql_host="localhost",
         mysql_port=3306,
+        mysql_database="teste",
     )
 
     # Simula a criação da Engine
@@ -36,6 +37,7 @@ def test_get_engine_error(monkeypatch):
         mysql_password="1234",
         mysql_host="localhost",
         mysql_port=3306,
+        mysql_database="teste",
     )
 
     # Simula erro ao criar a Engine
