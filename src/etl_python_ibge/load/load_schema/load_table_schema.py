@@ -10,6 +10,23 @@ def load_star_schema(
     star_schema: dict[str, pd.DataFrame],
     engine: Engine,
 ) -> None:
+    """
+    Carrega todas as tabelas do modelo estrela no MySQL.
+
+    Parameters
+    ----------
+    star_schema : dict[str, pd.DataFrame]
+        Dicionário contendo as dimensões e a tabela fato.
+
+    engine : Engine
+        Engine SQLAlchemy utilizada para conexão.
+
+    Raises
+    ------
+    RuntimeError
+        Caso ocorra erro durante a carga.
+    """
+
     logger = logging.getLogger(__name__)
 
     logger.info("Iniciando carga do modelo estrela.")
