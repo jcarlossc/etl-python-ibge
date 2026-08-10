@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.2](https://github.com/jcarlossc/etl-python-ibge/compare/v0.10.1...v0.10.2) (2026-08-10)
+
+
+### Bug Fixes
+
+* test_load_table.py modificado ([daf8fc5](https://github.com/jcarlossc/etl-python-ibge/commit/daf8fc54f803752e8c752888c8b1baec4e647bb4))
+* test_load_table.py modificado ([311b786](https://github.com/jcarlossc/etl-python-ibge/commit/311b78634139a80bfbbf1ecd793000b431d69491))
+
 ## [0.10.1](https://github.com/jcarlossc/etl-python-ibge/compare/v0.10.0...v0.10.1) (2026-08-08)
 
 
