@@ -8,7 +8,7 @@ from etl_python_ibge.ibge_api.api_ibge import get_ibge_api
 from etl_python_ibge.load.load_schema.load_table_schema import load_star_schema
 from etl_python_ibge.sql.execute.execute_sql import execute_sql
 from etl_python_ibge.star_schema.get_star_schema import create_star_schema
-from etl_python_ibge.utils.config_settings.Settings import Settings
+from etl_python_ibge.utils.config_settings.Settings import get_settings
 from etl_python_ibge.utils.load_yaml.loader_yaml import load_all_configs
 from etl_python_ibge.utils.loggers.logger import setup_logger
 from etl_python_ibge.utils.retry.get_retry import retry
@@ -115,7 +115,7 @@ def run_pipeline() -> None:
         logger.info("Criando conexão com o banco de dados.")
 
         # Representa as configurações da aplicação (.env).
-        settings = Settings()
+        settings = get_settings()
 
         engine = get_engine(settings)
 
