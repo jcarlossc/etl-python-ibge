@@ -27,6 +27,8 @@ repos:
         additional_dependencies:
           - types-requests
           - types-PyYAML
+          - pydantic
+          - pydantic-settings
         args:
           - --ignore-missing-imports
 

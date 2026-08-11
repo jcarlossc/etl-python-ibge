@@ -15,6 +15,28 @@ from etl_python_ibge.utils.retry.get_retry import retry
 
 
 def run_pipeline() -> None:
+    """
+    Executa o pipeline completo de ETL dos dados do IBGE.
+
+    O pipeline executa as seguintes etapas:
+
+    1. Carrega as configurações do projeto.
+    2. Configura o sistema de logging.
+    3. Consulta a API do IBGE.
+    4. Converte os dados recebidos para DataFrame.
+    5. Cria o modelo dimensional (Star Schema).
+    6. Cria a conexão com o banco de dados.
+    7. Executa o script SQL de criação das tabelas.
+    8. Carrega as dimensões e fatos no banco de dados.
+    9. Libera a conexão com o banco.
+
+    Raises
+    ------
+    Exception
+        Propaga qualquer erro ocorrido durante a execução do pipeline
+        após registrar o erro no log.
+    """
+
     # ------------------------------------------------------------------
     # 1. Carrega as configurações
     # ------------------------------------------------------------------

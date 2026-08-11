@@ -39,7 +39,8 @@ dev = [
     "pytest-cov (>=7.1.0,<8.0.0)",
     "taskipy (>=1.14.1,<2.0.0)",
     "types-pyyaml (>=6.0.12.20260724,<7.0.0.0)",
-    "pre-commit (>=4.6.1,<5.0.0)"
+    "pre-commit (>=4.6.1,<5.0.0)",
+    "pydantic (>=2.13.4,<3.0.0)"
 ]
 
 [tool.taskipy.tasks]
