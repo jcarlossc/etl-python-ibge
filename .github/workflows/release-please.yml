@@ -1,4 +1,4 @@
-name: Release Please
+name: Release
 
 on:
   push:
@@ -9,11 +9,18 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  NODE_OPTIONS: --use-system-ca
+
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: googleapis/release-please-action@v4
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Release Please
+        uses: googleapis/release-please-action@v4
         with:
-          release-type: python
+          token: ${{ secrets.GITHUB_TOKEN }}
