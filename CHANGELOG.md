@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.12.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.11.0...v0.12.0) (2026-08-11)
+
+
+### Features
+
+* Arquivo pipeline.py adicionado ([05ec7b2](https://github.com/jcarlossc/etl-python-ibge/commit/05ec7b2e0b63e825847c4c1d1a2d7f16d8fc1b88))
+* Arquivo pipeline.py adicionado ([a5c83df](https://github.com/jcarlossc/etl-python-ibge/commit/a5c83df5faf2476e548abbec5f2770983faad0b9))
+
+
+### Bug Fixes
+
+* Arquivos Dettings e get_pipeline modificados ([b658451](https://github.com/jcarlossc/etl-python-ibge/commit/b6584512b04980e4b3df8301ac23f296abe18bc2))
+
 ## [0.11.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.10.3...v0.11.0) (2026-08-10)
 
 
