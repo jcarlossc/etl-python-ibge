@@ -18,6 +18,9 @@ dependencies = [
     "pymysql (>=1.2.0,<2.0.0)"
 ]
 
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+
 [tool.poetry]
 packages = [{include = "etl_python_ibge", from = "src"}]
 
