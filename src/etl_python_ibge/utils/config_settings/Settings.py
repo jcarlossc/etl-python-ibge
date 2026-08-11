@@ -29,3 +29,15 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
     )
+
+
+def get_settings() -> Settings:
+    """
+    Cria uma instância das configurações da aplicação.
+
+    Returns
+    -------
+    Settings
+        Objeto contendo as configurações carregadas do arquivo .env.
+    """
+    return Settings()
