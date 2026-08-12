@@ -65,7 +65,7 @@ def setup_logger(logging_config: dict[str, Any], log_file: str) -> None:
                 logging.FileHandler(log_file, encoding="utf-8"),
                 # StreamHandler envia os logs para o console (stdout),
                 # permitindo acompanhar a execução em tempo real.
-                logging.StreamHandler(),
+                # logging.StreamHandler(),
             ],
         )
 
