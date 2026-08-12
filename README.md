@@ -35,10 +35,9 @@ tratamento de exceções, testes automatizados, validação estática, linting e
 ## Imagens do Projeto
 <table>
   <tr>
-    <td><img src="https://github.com/jcarlossc/info-sales-mysql-api/blob/main/images/swagger.gif" alt="Imagem Relatório" width="200"/></td>
-    <td><a href="https://github.com/jcarlossc/info-sales-mysql-api/blob/main/images/response_1784729649227.json"><img src="https://github.com/jcarlossc/info-sales-mysql-api/blob/main/images/json.png" width="200"/></a></td>
-    <td><img src="https://github.com/jcarlossc/info-sales-mysql-api/blob/main/images/cobertura_testes.png" alt="Imagem Relatório" width="200"/></td>
-    <td><img src="https://github.com/jcarlossc/info-sales-mysql-api/blob/main/images/precommit.png" alt="Imagem Relatório" width="200"/></td>
-    <td><img src="https://github.com/jcarlossc/info-sales-mysql-api/blob/main/images/pytest.png" alt="Imagem Relatório" width="200"/></td>
+    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/cobertura_testes.JPG" alt="Imagem Testes" width="200"/></td>
+    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/precommit.JPG" alt="Imagem Testes" width="200"/></td>
+    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/pytest.JPG" alt="Imagem Relatório" width="200"/></td>
+    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/rich.jpg" alt="Imagem Relatório" width="200"/></td>
   </tr>
 </table>
