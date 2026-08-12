@@ -81,6 +81,9 @@ def run_pipeline() -> None:
         logger = logging.getLogger(__name__)
 
         try:
+            console.log("[orange]=======================================")
+            console.log("[orange]========== PIPELINE ETL IBGE ==========")
+            console.log("[orange]=======================================")
             # Rich de entrada
             progress.update(
                 task,
