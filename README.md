@@ -1,7 +1,5 @@
 <div align="center">
 
-# 📊 ETL Python IBGE
-
 <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/etl_python_ibge_01.jpg">
 
 ### Pipeline ETL
@@ -16,8 +14,6 @@ tratamento de exceções, testes automatizados, validação estática, linting e
 <img src="https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge" />
 <img src="https://img.shields.io/badge/TESTS-pytest-orange?style=for-the-badge" />
 
-</div>
-
 ![Poetry](https://img.shields.io/badge/Poetry-1.8+-60A5FA?style=for-the-badge&logo=poetry)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge)
@@ -29,15 +25,44 @@ tratamento de exceções, testes automatizados, validação estática, linting e
 ![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=for-the-badge&logo=pre-commit)
 ![Typed](https://img.shields.io/badge/Typing-MyPy-blue?style=for-the-badge)
 ![Code Style](https://img.shields.io/badge/code%20style-ruff-black?style=for-the-badge)
+</div>
 
 ---
 
-## Imagens do Projeto
+## Imagens de Testes de Qualidade e Monitoramento
 <table>
   <tr>
-    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/cobertura_testes.JPG" alt="Imagem Testes" width="200"/></td>
-    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/precommit.JPG" alt="Imagem Testes" width="200"/></td>
-    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/pytest.JPG" alt="Imagem Relatório" width="200"/></td>
-    <td><img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/rich.jpg" alt="Imagem Relatório" width="200"/></td>
+    <td>
+      <figure>
+        <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/cobertura_testes.JPG" alt="Imagem Testes" width="250" target="_blank"/>
+        <figcaption>
+          <p><b>Cobertura de Testes</b></p>
+        </figcaption>
+      <figure>  
+  </td>
+  <td>
+    <figure>
+      <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/precommit.JPG" alt="Imagem Testes" width="250" target="_blank" />
+      <figcaption>
+          <p><b>Pre-commit</b></p>
+      </figcaption>
+    <figure>  
+  </td>
+    <td>
+      <figure>
+        <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/pytest.JPG" alt="Imagem Relatório" width="250" target="_blank"/>
+        <figcaption>
+          <p><b>Testes Unitários</b></p>
+        </figcaption>
+      <figure> 
+    </td>
+    <td>
+      <figure>      
+        <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/rich.jpg" alt="Imagem Relatório" width="250" target="_blank"/>
+        <figcaption>
+          <p><b>Monitoramento - Rich</b></p>
+        </figcaption>
+      <figure>       
+    </td>
   </tr>
 </table>
