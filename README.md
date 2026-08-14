@@ -29,9 +29,17 @@ tratamento de exceções, testes automatizados, validação estática, linting e
 
 ---
 
-## Imagens de Testes de Qualidade e Monitoramento
+## 📌 Imagens do Projeto
 <table>
   <tr>
+    <td>
+      <figure>
+        <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/fluxo.JPG" alt="Imagem Testes" width="250" target="_blank"/>
+        <figcaption>
+          <p><b>Diagrama</b></p>
+        </figcaption>
+      <figure>  
+    </td>
     <td>
       <figure>
         <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/cobertura_testes.JPG" alt="Imagem Testes" width="250" target="_blank"/>
@@ -64,5 +72,130 @@ tratamento de exceções, testes automatizados, validação estática, linting e
         </figcaption>
       <figure>       
     </td>
+    <td>
+      <figure>      
+        <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/star_schema.png" alt="Imagem Relatório" width="250" target="_blank"/>
+        <figcaption>
+          <p><b>Star Schema</b></p>
+        </figcaption>
+      <figure>       
+    </td>
   </tr>
 </table>
+
+## 📌 Visão geral
+
+O fluxo principal é:
+
+1. Carregamento das configurações
+2. Configuração do logging
+3. Consulta à API do IBGE
+4. Retry automático em caso de falha
+5. Conversão dos dados para DataFrame
+6. Transformação e padronização
+7. Criação do Star Schema
+8. Conexão com o MySQL
+9. Criação das tabelas dimensionais
+10. Carga das dimensões
+11. Carga da tabela fato
+12. Liberação dos recursos
+
+## 🎯 Objetivos do projeto
+
+Este projeto foi desenvolvido para demonstrar conhecimentos práticos em:
+
+* Engenharia de Dados
+* Desenvolvimento de pipelines ETL
+* Consumo de APIs REST
+* Manipulação de dados com Pandas
+* Modelagem dimensional
+* Data Warehouse
+* Star Schema
+* SQL e MySQL
+* SQLAlchemy
+* Logging
+* Retry e tolerância a falhas
+* Testes automatizados
+* Qualidade de código
+* CI/CD
+* Gerenciamento de dependências com Poetry
+* Tipagem estática com MyPy
+* Linting com Ruff
+
+## ⭐ Modelo dimensional
+
+Os dados são organizados em um modelo dimensional baseado em Star Schema.
+
+### Dimensões
+* dim_indicador
+* dim_unidade
+* dim_pais
+* dim_tempo
+
+### Fato
+* fato_indicador
+
+Estrutura simplificada:
+```
+                  dim_indicador
+                        │
+                        │
+                        ▼
+dim_unidade ─────► fato_indicador ◄───── dim_pais
+                        │
+                        │
+                        ▼
+                    dim_tempo
+```
+Esse modelo facilita consultas analíticas e permite organizar os dados de forma adequada para cenários de Data Warehouse, por exemplo.
+
+## 📂 Estrutura do projeto
+```
+
+```
+
+## ⚙️ Tecnologias
+| Tecnologia | Utilização |
+| ---------- | ---------- |
+| Python | Desenvolvimento do ETL |
+| Poetry | Gerenciamento de dependências |
+| Pandas | Manipulação e transformação |
+| Requests | Consumo da API |
+| SQLAlchemy | Conexão com banco de dados |
+| MySQL | Armazenamento |
+| Pydantic | Settings	Configurações da aplicação |
+| PyYAML | Configurações YAML |
+| Rich | Interface visual do pipeline |
+| Pytest | Testes automatizados |
+| Pytest-Cov | Cobertura de testes |
+| Ruff | Linting e formatação |
+| MyPy | Verificação estática |
+| Pre-commit | Automação de validações |
+| GitHub Actions | CI/CD |
+| Release Please | Automatização de releases |
+| XAMPP | Servidor web local |
+
+## 📚 Licença
+Este projeto está licenciado sob MIT License.
+
+## 🎯 Desenvolvedor focado em:
+
+- Data Engineering
+- Analytics
+- R Programming
+- Python Programming
+- Automação de processos
+- Engenharia de Software
+
+## 📝 Contato
+* Autor: Carlos da Costa
+* Recife, PE - Brasil
+* Telefone: +55 81 99712 9140
+* Telegram: @jcarlossc
+* Blogger linguagem R: https://informaticus77-r.blogspot.com/
+* Blogger linguagem Python: https://informaticus77-python.blogspot.com/
+* Email: jcarlossc1977@gmail.com
+* LinkedIn: https://www.linkedin.com/in/carlos-da-costa-669252149/
+* GitHub: https://github.com/jcarlossc
+* Kaggle: https://www.kaggle.com/jcarlossc/
+* Twitter/X: https://x.com/jcarlossc1977
