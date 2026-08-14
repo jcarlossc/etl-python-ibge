@@ -84,7 +84,6 @@ tratamento de exceções, testes automatizados, validação estática, linting e
 </table>
 
 ## 📌 Visão geral
-
 O fluxo principal é:
 
 1. Carregamento das configurações
@@ -101,7 +100,6 @@ O fluxo principal é:
 12. Liberação dos recursos
 
 ## 🎯 Objetivos do projeto
-
 Este projeto foi desenvolvido para demonstrar conhecimentos práticos em:
 
 * Engenharia de Dados
@@ -123,7 +121,6 @@ Este projeto foi desenvolvido para demonstrar conhecimentos práticos em:
 * Linting com Ruff
 
 ## ⭐ Modelo dimensional
-
 Os dados são organizados em um modelo dimensional baseado em Star Schema.
 
 ### Dimensões
@@ -152,19 +149,75 @@ Esse modelo facilita consultas analíticas e permite organizar os dados de forma
 ## 📂 Estrutura do projeto
 ```
 etl-python-ibge/
+├── .github/
+│    └── workflows
+│         ├── ci.yml
+│         └── release-please.yml
 ├── config/
 │   ├── identifiers.yaml
 │   ├── logging.yaml
 │   └── paths.yaml
+├── htmlcov/
+├── images/
+├── logs/
+│   └── app.log
 ├── src/
 │   └── etl_python_ibge/
-│       ├── main.py
-│       ├── pipeline/
+│       ├── converts/
+│       │    └── convert_to_df.py
 │       ├── database/
-│       └── ...
+│       │    └── get_connection.py
+│       ├── ibge_api/
+│       │    └── api_ibge.py
+│       ├── load/
+│       │   ├── load_schema/
+│       │   │   └── load_table_schema.py
+│       │   └── table_load/
+│       │       └── load_tabble.py
+│       ├── pipeline/
+│       │       └── get_pipeline.py
+│       ├── sql/
+│       │   ├── create_star/
+│       │   │   └── create_star_schema.sql
+│       │   └── execute/
+│       │       └── execute_sql.py
+│       ├── star_schema/
+│       │       └── get_star_schema.py
+│       ├── utils/
+│       │   ├── config_settings/
+│       │   │   └── Settings.py
+│       │   ├── load_yaml/
+│       │   │   └── .py
+│       │   ├── loggers/
+│       │   │   └── logger.py
+│       │   └── retry/
+│       │       └── get_retry.py
+│       └── main.py
 ├── tests/
+│    ├── test_convert_to_df
+│    ├── test_execute_sql.py
+│    ├── test_get_engine.py
+│    ├── test_get_ibge_api.py
+│    ├── test_get_pipeline.py
+│    ├── test_get_star_schema.py
+│    ├── test_load_all_config.py
+│    ├── test_load_table_schema.py
+│    ├── test_load_table.py
+│    ├── test_main.py
+│    ├── test_get_retry.py
+│    └── test_setup_logger.py
+├── .coverage
+├── .env
+├── .env.example
+├── test_get_retry.py.gitignore
+├── .pre-commit-config.yaml
+├── .release-please-manifest.json
+├── CHANGELOG.md
+├── LICENSE
+├── poetry.lock
 ├── pyproject.toml
-└── README.md
+├── README.md
+└── release-please-config.json
 ```
 
 ## ⚙️ Tecnologias
@@ -189,7 +242,6 @@ etl-python-ibge/
 | XAMPP | Servidor web local |
 
 ## 🔁 CI/CD
-
 O projeto utiliza GitHub Actions para automatizar validações.
 
 O pipeline de CI executa tarefas como:
@@ -213,7 +265,6 @@ Coverage
 A automação reduz a possibilidade de alterações com problemas chegarem à branch principal.
 
 ## 🔎 Qualidade de código
-
 As validações são utilizadas para manter consistência, tipagem e qualidade do código.
 
 * App: Executa aplicação. ```poetry run task app```
@@ -228,8 +279,24 @@ As validações são utilizadas para manter consistência, tipagem e qualidade d
 * Mypy: Faz verificação estática de tipos. ```poetry run task mypy```
 * Precommit</span>: Executa todos os hooks do pre-commit. ```poetry run task precommit```
 
-## 📦 Versionamento e Releases
+## 🧪 Testes
+Os testes são desenvolvidos com pytest.
 
+Executar os testes:
+
+```
+poetry run task pytest
+```
+
+Executar com cobertura:
+
+```
+poetry run task covhtml
+```
+
+O pipeline utiliza mocks para isolar dependências externas, permitindo testar sua orquestração sem depender diretamente da API do IBGE ou de um banco MySQL real.
+
+## 📦 Versionamento e Releases
 O projeto utiliza versionamento semântico e Release Please.
 
 Exemplo:
@@ -239,8 +306,75 @@ v0.14.0<br />
 v0.15.0<br />
 v0.15.1<br />
 
-## 🎯 Principais práticas aplicadas
+## 📝 Logging
+O projeto possui sistema de logging configurável.
 
+Os registros podem incluir:
+
+* Início e término do pipeline;
+* Quantidade de registros processados;
+* Etapas de transformação;
+* Conexão com banco;
+* Criação de tabelas;
+* Carga dos dados;
+* Erros;
+* Traceback de exceções.
+
+Exemplo:
+
+```
+2026-08-12 15:06:31,900 - INFO - etl_python_ibge.ibge_api.api_ibge - Consultando indicador 77829.
+2026-08-12 15:06:34,435 - INFO - etl_python_ibge.ibge_api.api_ibge - Consultando indicador 77834.
+2026-08-12 15:06:37,004 - INFO - etl_python_ibge.ibge_api.api_ibge - Coleta finalizada com sucesso.
+2026-08-12 15:06:37,017 - INFO - etl_python_ibge.pipeline.get_pipeline - Dados obtidos com sucesso da API do IBGE.
+2026-08-12 15:06:37,055 - INFO - etl_python_ibge.pipeline.get_pipeline - Convertendo dados para DataFrame.
+2026-08-12 15:06:37,057 - INFO - etl_python_ibge.converts.convert_to_df - Iniciando convrsão e limpeza dos dados.
+2026-08-12 15:06:37,162 - INFO - etl_python_ibge.converts.convert_to_df - Finalizando a conversão e limpeza dos dados.
+2026-08-12 15:06:37,173 - INFO - etl_python_ibge.pipeline.get_pipeline - Conversão concluída. Total de registros: 734
+2026-08-12 15:06:37,181 - INFO - etl_python_ibge.pipeline.get_pipeline - Criando modelo dimensional Star Schema.
+2026-08-12 15:06:37,186 - INFO - etl_python_ibge.star_schema.get_star_schema - Iniciando modelagem dos dados.
+2026-08-12 15:06:37,187 - INFO - etl_python_ibge.star_schema.get_star_schema - Iniciando modelagem da dimensão indicador.
+2026-08-12 15:06:37,199 - INFO - etl_python_ibge.star_schema.get_star_schema - Iniciando modelagem da dimensão unidade.
+2026-08-12 15:06:37,216 - INFO - etl_python_ibge.star_schema.get_star_schema - Iniciando modelagem da dimensão país.
+```
+
+## 🔄 Retry e tolerância a falhas
+A comunicação com a API utiliza mecanismo de retry para situações transitórias de rede.
+
+Exemplo:
+```
+ibge_data = retry(
+    partial(
+        get_ibge_api,
+        identifiers,
+        url,
+    ),
+    max_attempts=3,
+    delay=2,
+)
+```
+Isso reduz o impacto de falhas temporárias de conexão.
+
+Além disso, o pipeline registra exceções utilizando logging e garante o fechamento da conexão com o banco através de finally.
+
+## 🔐 Configuração
+As credenciais do banco de dados não são armazenadas no código.
+
+Utilize um arquivo .env:
+
+MYSQL_HOST=localhost<br />
+MYSQL_PORT=3306<br />
+MYSQL_USER=usuário<br />
+MYSQL_PASSWORD=sua_senha<br />
+MYSQL_DATABASE=ibge_database<br />
+
+O arquivo .env deve permanecer fora do controle de versão.
+
+Existe um arquivo de exemplo:
+
+.env.example
+
+## 🎯 Principais práticas aplicadas
 O projeto busca aplicar princípios utilizados em ambientes profissionais:
 
 * Separação de responsabilidades;
@@ -259,6 +393,40 @@ O projeto busca aplicar princípios utilizados em ambientes profissionais:
 * CI/CD;
 * Versionamento semântico;
 * Documentação técnica.
+
+## 🛠️ Modo de Utilização
+1. Execute o XAMPP
+* Caso não o tenha, baixe-o: <a href="https://www.apachefriends.org/pt_br/download.html">https://www.apachefriends.org/pt_br/download.html</a>
+* Instale-o normalmente
+* Execute o Painel de Controle
+* Acione o Apache e o MySQL/MariaDB
+
+2. Com a linguagem Python instalada: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>
+3. Instale o pipx:
+```
+pip install pipx
+```
+4. Em seguida:
+```
+pipx ensurepath
+```
+5. E, por fim, o gerenciador Poetry:
+```
+pipx install poetry
+```
+6. Clone o repositório e acesse o diretório
+```
+git clone https://github.com/jcarlossc/etl-python-ibge.git
+cd etl-python-ibge
+```
+7. Instalação das dependências:
+```
+poetry install
+```
+9. Para executar o projeto:
+```
+poetry run task app
+```
 
 ## 📚 Licença
 Este projeto está licenciado sob MIT License.
