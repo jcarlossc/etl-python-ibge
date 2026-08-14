@@ -151,7 +151,20 @@ Esse modelo facilita consultas analíticas e permite organizar os dados de forma
 
 ## 📂 Estrutura do projeto
 ```
-
+etl-python-ibge/
+├── config/
+│   ├── identifiers.yaml
+│   ├── logging.yaml
+│   └── paths.yaml
+├── src/
+│   └── etl_python_ibge/
+│       ├── main.py
+│       ├── pipeline/
+│       ├── database/
+│       └── ...
+├── tests/
+├── pyproject.toml
+└── README.md
 ```
 
 ## ⚙️ Tecnologias
@@ -174,6 +187,78 @@ Esse modelo facilita consultas analíticas e permite organizar os dados de forma
 | GitHub Actions | CI/CD |
 | Release Please | Automatização de releases |
 | XAMPP | Servidor web local |
+
+## 🔁 CI/CD
+
+O projeto utiliza GitHub Actions para automatizar validações.
+
+O pipeline de CI executa tarefas como:
+```
+Checkout
+   ↓
+Setup Python
+   ↓
+Poetry
+   ↓
+Instalação das dependências
+   ↓
+Ruff
+   ↓
+MyPy
+   ↓
+Pytest
+   ↓
+Coverage
+```
+A automação reduz a possibilidade de alterações com problemas chegarem à branch principal.
+
+## 🔎 Qualidade de código
+
+As validações são utilizadas para manter consistência, tipagem e qualidade do código.
+
+* App: Executa aplicação. ```poetry run task app```
+* Ruff:
+    * format: altera os arquivos para deixá-los formatados. ```poetry run task format```
+    * check: apenas verifica se os arquivos estão formatados. Não altera nada. ```poetry run task check```
+    * lint: procura problemas como imports incorretos, código desnecessário, variáveis não utilizadas, etc. ```poetry run task lint```
+    * fix: procura esses problemas e tenta corrigi-los automaticamente. ```poetry run task fix```
+* Pytest: executa testes unitários. ```poetry run task pytest```
+* Covhtml: executa os testes e gera relatório de cobertura em HTML. ```poetry run task covhtml```
+* Covcmd: Executa testes mostrando cobertura no terminal. ```poetry run task covcmd```
+* Mypy: Faz verificação estática de tipos. ```poetry run task mypy```
+* Precommit</span>: Executa todos os hooks do pre-commit. ```poetry run task precommit```
+
+## 📦 Versionamento e Releases
+
+O projeto utiliza versionamento semântico e Release Please.
+
+Exemplo:
+
+v0.13.0<br />
+v0.14.0<br />
+v0.15.0<br />
+v0.15.1<br />
+
+## 🎯 Principais práticas aplicadas
+
+O projeto busca aplicar princípios utilizados em ambientes profissionais:
+
+* Separação de responsabilidades;
+* Funções pequenas e reutilizáveis;
+* Configuração externa;
+* Gerenciamento seguro de credenciais;
+* Logging estruturado;
+* Tratamento de exceções;
+* Retry para operações externas;
+* Modelagem dimensional;
+* Testes automatizados;
+* Cobertura de código;
+* Linting;
+* Tipagem estática;
+* Pre-commit;
+* CI/CD;
+* Versionamento semântico;
+* Documentação técnica.
 
 ## 📚 Licença
 Este projeto está licenciado sob MIT License.
