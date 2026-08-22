@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.14.0...v1.0.0) (2026-08-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* Pyproject modificado
+
+### Features
+
+* Pyproject modificado ([013a35e](https://github.com/jcarlossc/etl-python-ibge/commit/013a35ef39482d771a433afb01a5377d39efb34f))
+
 ## [0.14.0](https://github.com/jcarlossc/etl-python-ibge/compare/v0.13.0...v0.14.0) (2026-08-11)
 
 
