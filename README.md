@@ -6,7 +6,7 @@
 
 Pipeline ETL desenvolvido em Python para coleta, transformação, modelagem e carga de dados públicos do IBGE em um banco de dados dimensional utilizando Star Schema.
 
-O projeto foi desenvolvido com foco em boas práticas de Engenharia de Dados, incluindo separação de responsabilidades, configuração externa, logging, retry, 
+O projeto foi desenvolvido com foco em boas práticas de Engenharia de Dados, incluindo separação de responsabilidades, configuração externa, logging, retry,
 tratamento de exceções, testes automatizados, validação estática, linting e integração contínua.
 
 <img src="https://img.shields.io/badge/Python-276DC3?style=for-the-badge&logo=r&logoColor=white" />
@@ -38,7 +38,7 @@ tratamento de exceções, testes automatizados, validação estática, linting e
         <figcaption>
           <p><b>Diagrama</b></p>
         </figcaption>
-      <figure>  
+      <figure>
     </td>
     <td>
       <figure>
@@ -46,7 +46,7 @@ tratamento de exceções, testes automatizados, validação estática, linting e
         <figcaption>
           <p><b>Cobertura de Testes</b></p>
         </figcaption>
-      <figure>  
+      <figure>
   </td>
   <td>
     <figure>
@@ -54,7 +54,7 @@ tratamento de exceções, testes automatizados, validação estática, linting e
       <figcaption>
           <p><b>Pre-commit</b></p>
       </figcaption>
-    <figure>  
+    <figure>
   </td>
     <td>
       <figure>
@@ -62,23 +62,23 @@ tratamento de exceções, testes automatizados, validação estática, linting e
         <figcaption>
           <p><b>Testes Unitários</b></p>
         </figcaption>
-      <figure> 
+      <figure>
     </td>
     <td>
-      <figure>      
+      <figure>
         <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/rich.jpg" alt="Imagem Relatório" width="250" target="_blank"/>
         <figcaption>
           <p><b>Monitoramento - Rich</b></p>
         </figcaption>
-      <figure>       
+      <figure>
     </td>
     <td>
-      <figure>      
+      <figure>
         <img src="https://github.com/jcarlossc/etl-python-ibge/blob/main/images/star_schema.png" alt="Imagem Relatório" width="250" target="_blank"/>
         <figcaption>
           <p><b>Star Schema</b></p>
         </figcaption>
-      <figure>       
+      <figure>
     </td>
   </tr>
 </table>
